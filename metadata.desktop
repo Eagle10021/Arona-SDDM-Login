@@ -10,7 +10,7 @@ Website=https://github.com/Eagle10021/Arona-SDDM-Login
 Screenshot=Previews/Preview.png
 MainScript=Main.qml
 ConfigFile=theme.conf
-TranslationsDirectory=translations
+
 Theme-Id=arona-theme
 Theme-API=2.11
 QtVersion=6

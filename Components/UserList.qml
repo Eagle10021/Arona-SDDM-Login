@@ -22,8 +22,8 @@
 // along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 //
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
+import QtQuick
+import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 
 Item {
@@ -132,7 +132,7 @@ Item {
                     target: usernameIcon
                     icon.color: Qt.lighter(root.palette.highlight, 1.1)
                 }
-            },
+            },modify user select
             State {
                 name: "hovered"
                 when: selectUser.hovered

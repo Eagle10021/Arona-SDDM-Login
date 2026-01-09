@@ -22,8 +22,8 @@
 // along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 //
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
+import QtQuick
+import QtQuick.Controls
 
 //TODO Add the opacity for clock
 Column {
@@ -35,7 +35,7 @@ Column {
 
     Label {
         anchors.horizontalCenter: parent.horizontalCenter
-        font.pointSize: config.HeaderText !=="" ? root.font.pointSize * 3 : 0
+        font.pointSize: config.HeaderText !== "" ? Math.max(1, root.font.pointSize * 3) : 0
         color: root.palette.text
         renderType: Text.QtRendering
         text: config.HeaderText

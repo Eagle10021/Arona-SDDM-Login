@@ -1,0 +1,16 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+        {
+            "Name": "Machillka"
+        }
+    ],
+    "Id": "arona-theme",
+    "Name": "Arona Theme",
+    "Description": "Blue Archive Theme for SDDM",
+    "Version": "1.0",
+    "MainScript": "Main.qml",
+    "Website": "https://github.com/Machillka/Arona-sddm-login"
+    }
+}

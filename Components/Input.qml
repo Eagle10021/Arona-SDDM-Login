@@ -22,16 +22,16 @@
 // along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 //
 
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 
 Column {
     id: inputContainer
     Layout.fillWidth: true
 
-    property Control exposeSession: sessionSelect.exposeSession
+    property Item exposeSession: sessionSelect.exposeSession
     property bool failed
 
     Item {
@@ -45,13 +45,12 @@ Column {
 
             id: selectUser
 
-            displayText: ""
             width: parent.height
             height: parent.height
             anchors.left: parent.left
 
             property var popkey: config.ForceRightToLeft == "true" ? Qt.Key_Right : Qt.Key_Left
-            Keys.onPressed: {
+            Keys.onPressed: (event) => {
                 if (event.key == Qt.Key_Down && !popup.opened)
                     username.forceActiveFocus();
                 if ((event.key == Qt.Key_Up || event.key == popkey) && !popup.opened)
@@ -69,6 +68,7 @@ Column {
                 username.text = currentText
             }
 
+            // make the text adapt to dark mode or white mode
             delegate: ItemDelegate {
                 width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -76,10 +76,12 @@ Column {
                     text: model.name
                     font.pointSize: root.font.pointSize * 0.8
                     font.capitalization: Font.Capitalize
-                    color: selectUser.highlightedIndex === index ? root.palette.highlight.hslLightness >= 0.7 ? "#444" : "white" : root.palette.window.hslLightness >= 0.8 ? root.palette.highlight.hslLightness >= 0.8 ? "#444" : root.palette.highlight : "white"
+                    color: selectUser.highlightedIndex === index ? root.palette.highlight.hslLightness >= 0.7 ? "#000" : "white" : root.palette.window.hslLightness >= 0.8 ? root.palette.highlight.hslLightness >= 0.8 ? "#000" : root.palette.highlight : "white"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
+
                 }
+                opacity: 0.7
                 highlighted: parent.highlightedIndex === index
                 background: Rectangle {
                     color: selectUser.highlightedIndex === index ? root.palette.highlight : "transparent"
@@ -88,17 +90,17 @@ Column {
 
             indicator: Button {
                     id: usernameIcon
-                    width: selectUser.height * 0.8
+                    width: selectUser.height * 0.6
                     height: parent.height
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.leftMargin: selectUser.height * 0.125
-                    icon.height: parent.height * 0.25
-                    icon.width: parent.height * 0.25
+                    icon.height: parent.height * 0.2
+                    icon.width: parent.height * 0.2
                     enabled: false
                     icon.color: root.palette.text
-                    flat: true
                     icon.source: Qt.resolvedUrl("../Assets/User.svgz")
+                    background: Item {}
             }
 
             background: Rectangle {
@@ -191,6 +193,8 @@ Column {
             selectByMouse: true
             horizontalAlignment: TextInput.AlignHCenter
             renderType: Text.QtRendering
+            color: "black"
+            placeholderTextColor: "#555555"
             onFocusChanged:{
                 if(focus)
                     selectAll()
@@ -242,6 +246,8 @@ Column {
             passwordCharacter: "•"
             passwordMaskDelay: config.ForceHideCompletePassword == "true" ? undefined : 1000
             renderType: Text.QtRendering
+            color: "black"
+            placeholderTextColor: "#555555"
             background: Rectangle {
                 color: "transparent"
                 border.color: root.palette.text
@@ -453,7 +459,6 @@ Column {
         }
     }
 
-    // Login Button
     Item {
         id: login
         height: root.font.pointSize * 3

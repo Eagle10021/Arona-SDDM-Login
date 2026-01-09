@@ -49,20 +49,13 @@ sudo pacman -S sddm qt5-quickcontrols2 qt5-graphicaleffects qt5-svg
 
 For Debian based:
 ```bash
-sudo apt install --no-install-recommends sddm qml‑module‑qtquick‑layouts qml6-module-qt5compat-graphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5
+sudo apt install --no-install-recommends sddm qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5
 ```
 
 For Red Hat based：
 ```bash
 sudo dnf install sddm qt5‑qtquickcontrols2 qt5‑qtgraphicaleffects qt5‑qtsvg
 ```
-
-# Addition
-
-Please drop a glance at the other project about `Blue Archive`
-
-- [Splash-Screen](https://github.com/Machillka/arona-splash-theme)
-- [Grub](https://github.com/Machillka/GameDevClub-GRUB-Theme)
 
 # Thanks to
 

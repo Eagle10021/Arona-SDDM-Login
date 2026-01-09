@@ -22,8 +22,8 @@
 // along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 //
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
+import QtQuick
+import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 
 Item {
@@ -35,14 +35,14 @@ Item {
     property var selectedSession: selectSession.currentIndex
     property string textConstantSession
     property int loginButtonWidth
-    property Control exposeSession: selectSession
+    property Item exposeSession: selectSession
 
     ComboBox {
         id: selectSession
 
         hoverEnabled: true
         anchors.left: parent.left
-        Keys.onPressed: {
+        Keys.onPressed: (event) => {
             if (event.key == Qt.Key_Up && loginButton.state != "enabled" && !popup.opened)
                 revealSecret.focus = true,
                 revealSecret.state = "focused",

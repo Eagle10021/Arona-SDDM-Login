@@ -69,4 +69,5 @@ sudo dnf install sddm qt5‑qtquickcontrols2 qt5‑qtgraphicaleffects qt5‑qtsv
 
 # Thanks to
 
-This repo is built up on the [Sugar Candy login](https://github.com/Kangie/sddm-sugar-candy)
+This repo is a fork of and built up on the [Arona SDDM Login](https://github.com/Machillka/arona-sddm-login) by [Machillka](https://github.com/Machillka).
+The original theme is based on [Sugar Candy login](https://github.com/Kangie/sddm-sugar-candy)

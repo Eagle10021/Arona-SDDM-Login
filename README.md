@@ -14,7 +14,7 @@ Modify some problems in "Sugar Candy login", and make the theme adapted to Blue 
 - Fixed contrast issues for username/password fields
 
 
-![Preview](/Previews/PartialBlur.png "Preview")
+![Preview](Previews/Preview.png "Preview")
 
 # Usage
 

@@ -4,7 +4,7 @@
 
 从 “Sugar Candy Login” 修改，使其符合碧蓝档案游戏的主题（个人最喜欢的游戏）
 
-![Preview](../Previews/PartialBlur.png "Preview")
+![Preview](../Previews/Preview.png "Preview")
 
 # 使用
 
@@ -25,7 +25,7 @@ sudo tar -xzvf ~/arona-sddm-login.tar -C /usr/share/sddm/themes
 只是将手动安装写成了 [install.sh](../install.sh) 而已，但是加入了自定义屏幕分辨率的重新定义 (默认计算当前屏幕分辨率)
 
 ```bash
-git clone https://github.com/Machillka/arona-sddm-login.git
+git clone https://github.com/Eagle10021/Arona-SDDM-Login.git
 cd arona-sddm-login
 bash install.sh
 ```

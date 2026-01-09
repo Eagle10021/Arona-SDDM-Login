@@ -2,15 +2,19 @@
     "KPackageStructure": "Plasma/LookAndFeel",
     "KPlugin": {
         "Authors": [
-        {
-            "Name": "Machillka"
-        }
-    ],
-    "Id": "arona-theme",
-    "Name": "Arona Theme",
-    "Description": "Blue Archive Theme for SDDM",
-    "Version": "1.0",
-    "MainScript": "Main.qml",
-    "Website": "https://github.com/Machillka/Arona-sddm-login"
+            {
+                "Name": "Machillka"
+            },
+            {
+                "Name": "Eagle"
+            }
+        ],
+        "Id": "arona-theme",
+        "Name": "Arona Theme",
+        "Description": "Blue Archive Theme for SDDM (Qt 6 Compatible)",
+        "Version": "1.0",
+        "MainScript": "Main.qml",
+        "Website": "https://github.com/Eagle10021/Arona-SDDM-Login",
+        "License": "GPL-3.0-or-later"
     }
 }

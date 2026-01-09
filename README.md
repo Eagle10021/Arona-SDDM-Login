@@ -4,6 +4,16 @@
 
 Modify some problems in "Sugar Candy login", and make the theme adapted to Blue Archive (my favorite game)
 
+## Recent Updates (Qt 6 Compatibility)
+- Updated SDDM theme for fully Qt 6 compatibility
+- Updated import statements to use Qt5Compat.GraphicalEffects
+- Fixed property type mismatches (Control vs Item)
+- Explicitly defined signal handler parameters
+- Fixed KeyNavigation index bounds
+- Ensure valid font point sizes
+- Fixed contrast issues for username/password fields
+
+
 ![Preview](/Previews/PartialBlur.png "Preview")
 
 # Usage
@@ -25,7 +35,7 @@ In the `[Theme]` section simply add the themes name to this line: `Current=arona
 It can adapt the resolution in your device.
 
 ```bash
-git clone https://github.com/Machillka/arona-sddm-login.git
+git clone https://github.com/Eagle10021/Arona-SDDM-Login.git
 cd arona-sddm-login
 bash install.sh
 ```

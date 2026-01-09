@@ -1,12 +1,12 @@
 [SddmGreeterTheme]
 Name=Arona Theme
-Description=Blue Archive Theme for SDDM
-Author=Machillka
+Description=Blue Archive Theme for SDDM (Qt 6 Compatible)
+Author=Machillka, Eagle
 Copyright=Copyright (C) 2018 Marian Arlts
 License=GPL-3.0-or-later
 Type=sddm-theme
 Version=1.0
-Website=https://github.com/Machillka/Arona-sddm-login
+Website=https://github.com/Eagle10021/Arona-SDDM-Login
 Screenshot=Previews/PartialBlur.png
 MainScript=Main.qml
 ConfigFile=theme.conf

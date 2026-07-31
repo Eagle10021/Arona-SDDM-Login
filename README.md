@@ -1,18 +1,17 @@
 [English](README.md) | [简体中文](Documents/README.zh.md)
 
-# Blue Archive theme login theme for SDDM
+# Blue Archive SDDM Login Theme
 
-Modify some problems in "Sugar Candy login", and make the theme adapted to Blue Archive (my favorite game)
+A visual adaptation of the "Sugar Candy" SDDM login theme featuring characters and aesthetics from the game *Blue Archive*.
 
 ## Recent Updates (Qt 6 Compatibility)
-- Updated SDDM theme for fully Qt 6 compatibility
-- Updated import statements to use Qt5Compat.GraphicalEffects
-- Fixed property type mismatches (Control vs Item)
+- Updated the theme for full Qt 6 compatibility
+- Updated import statements to use `Qt5Compat.GraphicalEffects`
+- Fixed property type mismatches (`Control` vs `Item`)
 - Explicitly defined signal handler parameters
-- Fixed KeyNavigation index bounds
-- Ensure valid font point sizes
+- Fixed `KeyNavigation` index bounds
+- Ensured valid font point sizes
 - Fixed contrast issues for username/password fields
-
 
 ![Preview](Previews/Preview.png "Preview")
 
@@ -20,19 +19,25 @@ Modify some problems in "Sugar Candy login", and make the theme adapted to Blue 
 
 ## Manual Installation
 
-Fitstly, download the zip file from release page. Then unzip it to your sddm theme directory '`/usr/share/sddm/themes`' (May be different in your os)
+1. Download the release archive (e.g., `.tar.gz` or `.zip`) from the releases page.
+2. Extract the archive into your SDDM themes directory (typically `/usr/share/sddm/themes`):
 
 ```bash
-sudo tar -xzvf ~/arona-sddm-login.tar -C /usr/share/sddm/themes
+sudo tar -xzvf ~/arona-sddm-login.tar.gz -C /usr/share/sddm/themes
 ```
 
-After that you will have to point SDDM to the new theme by editing its config file, preferrably at /etc/sddm.conf (create if necessary). You can take the default config file of SDDM as a reference which might be found at: /usr/lib/sddm/sddm.conf.d/sddm.conf.
+3. Configure SDDM to use the new theme by editing its configuration file, typically located at `/etc/sddm.conf` (create it if it does not exist). You can use the default SDDM configuration file as a reference, which can usually be found at `/usr/lib/sddm/sddm.conf.d/sddm.conf`.
 
-In the `[Theme]` section simply add the themes name to this line: `Current=arona-sddm-login`.
+In the `[Theme]` section, set the `Current` theme name to `arona-sddm-login`:
+
+```ini
+[Theme]
+Current=arona-sddm-login
+```
 
 ## Automatic Installation (Recommended)
 
-It can adapt the resolution in your device.
+The installation script automatically detects and configures the theme resolution for your device.
 
 ```bash
 git clone https://github.com/Eagle10021/Arona-SDDM-Login.git
@@ -40,34 +45,45 @@ cd arona-sddm-login
 bash install.sh
 ```
 
-## For KDE Plasma
+## KDE Plasma Installation
 
-Can simply be installed from the store
+You can install the theme directly from the KDE store:
+
+1. Open your system settings and navigate to the **Login Screen (SDDM)** section.
+2. Click **Get New SDDM Themes...**.
+3. Search for the keyword `arona` and click install.
 
 ![installation](installation.png)
 
-Searching Keywords `arona`
+## Testing/Previewing the Theme
 
-## Common Problems
+To test the theme without logging out or rebooting, you can run:
 
-This theme is based on sddm, qt5-quickcontrols2, qt5-graphicaleffects, qt5-svg. If you encounter some problems, try to reinstall the dependencies
-
-For Arch based:
 ```bash
-sudo pacman -S sddm qt5-quickcontrols2 qt5-graphicaleffects qt5-svg
+dbus-run-session -- sddm-greeter --test-mode --theme /usr/share/sddm/themes/arona-sddm-login
+```
+*(Note: Depending on your distribution, the greeter command might be named `sddm-greeter-qt6` instead of `sddm-greeter`).*
+
+## Troubleshooting & Dependencies
+
+This theme is built for SDDM using Qt 6. If you encounter any visual or loading issues, make sure the necessary Qt 6 packages and QML modules are installed:
+
+### Arch Linux
+```bash
+sudo pacman -S sddm qt6-declarative qt6-5compat qt6-svg
 ```
 
-For Debian based:
+### Debian/Ubuntu
 ```bash
-sudo apt install --no-install-recommends sddm qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5
+sudo apt install --no-install-recommends sddm qml6-module-qtquick-layouts qml6-module-qtquick-controls qml6-module-qt5compat-graphicaleffects libqt6svg6
 ```
 
-For Red Hat based：
+### RHEL/Fedora
 ```bash
-sudo dnf install sddm qt5‑qtquickcontrols2 qt5‑qtgraphicaleffects qt5‑qtsvg
+sudo dnf install sddm qt6-qtdeclarative qt6-qt5compat qt6-qtsvg
 ```
 
-# Thanks to
+# Credits & Special Thanks
 
-This repo is a fork of and built up on the [Arona SDDM Login](https://github.com/Machillka/arona-sddm-login) by [Machillka](https://github.com/Machillka).
-The original theme is based on [Sugar Candy login](https://github.com/Kangie/sddm-sugar-candy)
+- This repository is a fork of [Arona SDDM Login](https://github.com/Machillka/arona-sddm-login) by [Machillka](https://github.com/Machillka).
+- The original design is based on the [Sugar Candy login](https://github.com/Kangie/sddm-sugar-candy) theme.
